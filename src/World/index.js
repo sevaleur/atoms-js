@@ -55,7 +55,7 @@ export default class World
 
     for(let i = 0; i < nAtoms; i++)
     {
-      let dst = i / (nAtoms - 1)
+      let dst = Math.pow(i / (nAtoms - 1), 0.5)
       let angle = 2 * Math.PI * turnFraction * i 
       
       let x = dst * Math.cos(angle) * scalar
