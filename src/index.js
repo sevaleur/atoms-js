@@ -15,7 +15,7 @@ new p5((p) =>
     )
 
     w.setup()
-    w.fill(p.createVector(p.windowWidth/2, p.windowHeight/2), 2000, 8)
+    w.fill(p.createVector(p.windowWidth/2, p.windowHeight/2), 2000, 450)
   }
 
   p.keyPressed = () => 

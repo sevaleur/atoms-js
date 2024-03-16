@@ -33,6 +33,7 @@ export default class World
     }
 
     this.setParams()
+    console.log((1 + Math.sqrt(5)) / 2)
   }
 
   setParams()
@@ -50,15 +51,20 @@ export default class World
 
   fill(location, nAtoms, scalar)
   {
+    let turnFraction = (1 + Math.sqrt(5)) / 2
+
     for(let i = 0; i < nAtoms; i++)
     {
-      let angle = Math.random() * 2 * Math.PI
-      let radius = Math.sqrt(Math.random() * this.p.windowWidth) * scalar
+      let dst = i / (nAtoms - 1)
+      let angle = 2 * Math.PI * turnFraction * i 
+      
+      let x = dst * Math.cos(angle) * scalar
+      let y = dst * Math.sin(angle) * scalar
       
       this.atoms[i] = new Atom(
         this.p, 
-        location.x - Math.cos(angle) * radius,
-        location.y - Math.sin(angle) * radius,
+        location.x - x,
+        location.y - y,
         4, 
         this.numGroups
       )
