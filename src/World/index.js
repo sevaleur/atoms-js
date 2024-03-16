@@ -33,7 +33,6 @@ export default class World
     }
 
     this.setParams()
-    console.log((1 + Math.sqrt(5)) / 2)
   }
 
   setParams()
@@ -55,11 +54,11 @@ export default class World
 
     for(let i = 0; i < nAtoms; i++)
     {
-      let dst = Math.pow(i / (nAtoms - 1), 0.5)
+      let dist = Math.pow(i / (nAtoms - 1), 0.5)
       let angle = 2 * Math.PI * turnFraction * i 
       
-      let x = dst * Math.cos(angle) * scalar
-      let y = dst * Math.sin(angle) * scalar
+      let x = dist * Math.cos(angle) * scalar
+      let y = dist * Math.sin(angle) * scalar
       
       this.atoms[i] = new Atom(
         this.p, 
